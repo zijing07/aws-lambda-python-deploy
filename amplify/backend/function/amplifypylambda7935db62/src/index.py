@@ -7,7 +7,7 @@ def handler(event, context):
 
   
   tknz = NLTKWordTokenizer()
-  sent_lc_tok = tknz.tokenize('laksdjf lasdjfk alsdkf ')
+  sent_lc_tok = tknz.tokenize('The Docker solution works!')
   
   return {
       'statusCode': 200,
@@ -16,5 +16,5 @@ def handler(event, context):
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
       },
-      'body': json.dumps('Hello from your new Amplify Python lambda!')
+      'body': json.dumps(sent_lc_tok)
   }
